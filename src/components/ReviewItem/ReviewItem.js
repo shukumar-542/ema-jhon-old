@@ -1,15 +1,15 @@
 import React from 'react';
 
 const ReviewItem = (props) => {
-      console.log(props);
-      const {name,quantity} = props.product
+      // console.log(props);
+      const {name,quantity,key,price} = props.product
       const reviewItemStyle = {
-            border :'1px solid lightgray',
-            paddingBottom : '10px',
-            marginLeft : '200px',
-            paddingLeft : '5px',
-            marginBottom : '5px',
-            marginRight : '100px',
+            borderBottom :'1px solid lightgray',
+            paddingBottom :'10px',
+           
+            
+      
+            
 
       }
       return (
@@ -17,7 +17,8 @@ const ReviewItem = (props) => {
             
             <h4 className='products-name'>{name}</h4>
             <p> Quantity :{quantity}</p>
-            <button className='main-button'>Remove</button>
+            <p> $ {price}</p>
+            <button className='main-button' onClick={()=>props.removeItem(key)}>Remove</button>
                   
             </div>
       );
